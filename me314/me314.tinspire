@@ -1,0 +1,203 @@
+Define LibPub me314()=
+Prgm
+:
+:me314\geo()
+:
+:exam1:="3 Energy, Energy Transfer, and General Energy Analysis:4 Properties of Pure Substances:5 Energy Analysis of Closed Systems"
+:exam2:="6 Mass and Energy Analysis of Control Volumes:9 Mechanisms of Heat Transfer:10 Steady Heat Conduction"
+:
+:c.sigma_str:="Stefan-Boltzmann constant"
+:c.sigma_metric:=5.67*10^-8
+:c.sigma_std:=0.1714*10^-8
+:
+:c.g_str:="Acceleration Due to Gravity"
+:c.g_metric:=9.8
+:c.g_std:=32
+:
+:prop.air_r:=286.9
+:
+:prop.air_density:=1.225
+:
+:prophar_r:=0.2081
+:
+:prop.n_cv:=0.743
+:
+:ch2.temp_solve(eq):=linSolve(system(eq,f=1.8*c+32,r=f+459.67,k=c+273),{c,f,r,k})
+:
+:ch2.temp_eqs(eq):=solve(system(eq,f=1.8*c+32,r=f+459.67,k=c+273),{c,f,r,k})
+:
+:ch2.f_temp(eq):=ch2.temp_solve(eq)[1]
+:
+:ch2.c_temp(eq):=ch2.temp_solve(eq)[2]
+:
+:ch2.r_temp(eq):=ch2.temp_solve(eq)[3]
+:
+:ch2.k_temp(eq):=ch2.temp_solve(eq)[4]
+:
+:ch2.p_gage:=p_abs+p_atm
+:
+:ch2.dp_w_depth:=rho*g*(z2-z1)
+:ch2.dp_w_depth_eq:=p2=p1+rho*g*(z1-z2)
+:
+:ch3.ke_kinetic:=(m*velocity^2)/2
+:
+:ch3.pe_potential:=m*g*z
+:
+:ch3.e_total_int1:=u+ke+pe
+:
+:ch3.mdot_flowrate1:=vdot/vspec
+:
+:ch3.mdot_flowrate2:=(ac*vavg)/vspec
+:
+:ch3.e_flow:=mdot*e
+:
+:ch3.e_int_system1:=u+ke+pe
+:
+:ch3.e_int_system2:=u+(m*velocity^2)/2+m*g*z
+:
+:ch3.e_transfer:=q+w+emass
+:
+:ch3.e_bal_eq1:=ch3.e_transfer=ch3.e_system
+:
+:ch3.w_shaft_eq1:=wshaft=2*π*t*revolutions
+:
+:ch3.w_spring_e1:=wspring=((k*(x2^(2)-x1^(2)))/(2))
+:
+:ch3.e_mech:=(p/rho)+(v^2)/2+g*z
+:
+:ch3.edot_mech:=mdot*((p/rho)+(v^2)/2+g*z)
+:
+:ch4.h_enthalpy:=u+p*v
+:
+:ch4.ideal_gas_eq1:=p*v=m*r*t
+:
+:ch4.ideal_gas_eq2:=p*vspec=r*t
+:
+:ch4.linear_eq:=(y-y0)/(x-x0)=(y1-y0)/(x1-x0)
+:
+:ch4.linear_interp_f(x,x0,x1,y0,y1):=solve((y-y0)/(x-x0)=(y1-y0)/(x1-x0),y)
+:
+:ch4.quality_eq1:=q=((avg-f)/(g-f))
+:ch4.quality_eq2:=q=mg/(mf+mg)
+:
+:ch5.wb_isobaric1:= p*(v2-v1)
+:
+:ch5.wb_isobaric2:= dH-du
+:
+:ch5.e_bal_pcyl_eq1:=ch3.e_bal_eq1|emass=0 and ke=0 and pe=0 and w=win-wout and u=u2-u1 and q=qin-qout
+:
+:ch5.wb_str:="Work done at the boundary. Wout-Win"
+:
+:ch5.wb_generic_eq1:=wb=∫(p(v),v,v1,v2)
+:
+:ch5.wb_vconst_eq1:=wb=0
+:
+:ch5.wb_pconst_eq1:=wb=p*(v2-v1)
+:
+:ch5.wb_isothermal1:=p1*v1*ln(v2/v1)
+:
+:ch5.wb_isothermal2:=m*r*t*ln(v2/v1)
+:
+:ch5.wb_tconst_eq1:=wb=m*r*t*ln(((v2)/(v1)))
+:
+:ch5.wb_tconst_eq2:=wb=p1*v1*ln(((v2)/(v1)))
+:
+:ch5.wb_tconst_eq3:=wb=p1*v1*ln(((p1)/(p2)))
+:
+:ch5.wb_tconst_eq4:=wb=m*r*t*ln(((p1)/(p2)))
+:
+:ch5.polytropic_eq:=p1*v1^(n)=p2*v2^(n)
+:
+:ch5.wb_polytrop_eq1:=wb=((p2*v2-p1*v1)/(1-n))
+:
+:ch5.const_v_eq:=(u2-u1)=cv*(t2-t1)
+:
+:ch5.const_p_eq:=(h2-h1)=cp*(t2-t1)
+:
+:ch5.ideal_cvcpr_eq:=cp=cv+R
+:
+:ch6.mass_balance:=m2-m1=minn-mout
+:
+:ch6.mass_steady_eq:=minn-mout=0
+:
+:ch6.mass_incomp_eq:=vel1*ac1=vel2*ac2
+:
+:ch6.w_flow:=w_flow=p*v
+:
+:ch6.e_flow_fluid:=h+ke+pe
+:
+:ch6.edot_mass:=mdot*(h+ke+pe)
+:
+:ch9.fouriers_law:=q_cond=−k*a*((dt)/(dx))
+:
+:ch9.newton_cooling:=h*as*(ts-tsurr)
+:
+:ch9.stefan_boltzman:=q_emit=sigma*as*ts^(4)
+:
+:ch9.q_rad_between:=epsi*sigma*as*(ts^(4)-tsurr^(4))
+:
+:ch9.q_rtito:=(to-ti)/r
+:ch9.q_rtito_h:="Heat transfer over r caused by dT=to-ti"
+:
+:ch10.r_plane:=L/(k*as)
+:
+:ch10.r_cylinder:=((ln(((r_2)/(r_1))))/(2*π*k*l))
+:
+:ch10.r_sphere:=((r_2*−r_1)/(4*π*r_1*r_2*k))
+:
+:ch10.r_conv:=1/(h*as)
+:
+:ch10.r_interface:=1/(hc*as)
+:
+:ch10.r_rad:=1/(h_rad*as)
+:
+:ch10.rcr_cyl:=k_ins/h
+:
+:ch10.rcr_sphere:=(2*k_ins)/h
+:
+:ch10.q_common_surf:=s*k*(t1-t2)
+:
+:ch12.viscous_flow:="boundary layer where viscous effects are significant near surface."
+:ch12.inviscid_flow:="unaffected by solid surface."
+:ch12.viscosity:="internal resistance to flow."
+:ch12.incompressible:="density remains nearly constant during flow."
+:ch12.steady:="no change at a point with time."
+:ch12.uniform:="no change with location."
+:ch12.transient:="developing  flows."
+:ch12.laminar_flow:="highly ordered fluid motion characterized by smooth layers."
+:ch12.turbulent_flow:="highly disordered fluid motion, typically at high velocities."
+:ch12.transitionflow:="an area that alternates between laminar and turbulent behavior."
+:
+:ch12.pr_h:="Prandtl Number - Relative thickness of the velocity and thermal boundary layers."
+:ch12.pr_cpkmu_eq:=pr=mu*cp/k
+:ch12.pr_cpkmu_f(cp,k,mu):=mu*cp/k
+:
+:ch12.re_h:="Reynolds Number - Indicates transition from laminar to turbulent flow."
+:ch12.re_rhovlmu_eq:=re=rho*vel*lc/mu
+:ch12.re_lmurhov_f(lc,mu,rho,vel):=rho*vel*lc/mu
+:ch12.re_lvvk_eq:=re=vel*lc/vk
+:ch12.re_lvvk_f(lc,vel,vk):=vel*lc/vk
+:
+:ch12.nu_h:="Nusselt Number - dimensionless convection heat transfer coefficient"
+:ch12.nu_hkl_eq:=nu=h*lc/k
+:ch12.nu_hkl_f(h,k,l):=nu=h*lc/k
+:ch12.nu_cmnprre_eq:=nu=c*(re)^(m)*(pr)^(n)
+:ch12.nu_cmnprre_f(c,m,n,pr,re):=nu=c*(re)^(m)*(pr)^(n)
+:
+:ch12.nu_m_laminar:=0.5
+:ch12.nu_m_turbulent:=0.8
+:ch12.nu_n:=1/3
+:
+:ch12.nu_laminar_loc:=0.332*(Re)^(0.5)*(Pr)^(1/3)
+:ch12.nu_trblnt_loc:=0.0296*(Re)^(0.8)*(Pr)^(1/3)
+:
+:ch12.nu_laminar_avg:=0.664*(Re)^(0.5)*(Pr)^(1/3)
+:ch12.nu_trblnt_avg:=0.037*(Re)^(0.8)*(Pr)^(1/3)
+:
+:ch12.nu_combined_avg:=(0.037*re^(0.8)-871)*pr^(((1)/(3)))
+:
+:ch12.nu_cylinder:=0.3+(0.62*Re^(1/2) Pr^(1/3))/(1+(0.4/Pr)^(2/3))^(1/4)*(1+(Re/282000)^(5/8) )^(4/5)
+:
+:ch12.nu_sphere:=2+(0.4*Re^(1/2)+0.06*Re^(2/3) )*Pr^0.4*(μ_o/μ_s )^(1/4)
+:
+:EndPrgm

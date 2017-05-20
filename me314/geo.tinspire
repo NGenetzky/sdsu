@@ -1,0 +1,25 @@
+Define LibPub geo()=
+Prgm
+:
+:geo.a_circle_r:=pi*r^2
+:geo.a_circle_r_f(r):=pi*r^2
+:geo.a_circle_d:=pi*(d/2)^2
+:geo.a_circle_d_f(d):=pi*(d/2)^2
+:
+:geo.c_circle_r:=2*pi*r
+:geo.c_circle_r_f(r):=2*pi*r
+:geo.c_circle_d:=pi*d
+:geo.c_circle_d_f(d):=pi*d
+:
+:geo.v_sphere_r:=(4/3)*pi*r^3
+:geo.v_sphere_r_f(r):=(4/3)*pi*r^3
+:
+:geo.s_sphere_r:=4*pi*r^2
+:geo.s_sphere_r_f(r):=4*pi*r^2
+:
+:geo.s_cylinder_d:=(2*pi*r)*l
+:geo.s_cylinder_lr_f(l,r):=(2*pi*r)*l
+:geo.s_cylinder_d:=(pi*d)*l
+:geo.s_cylinder_dl_f(d,l):=(pi*d)*l
+:
+:EndPrgm
