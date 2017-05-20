@@ -1,0 +1,100 @@
+Define LibPub ee422()=
+Prgm
+:
+:lcm_r(i,lst):=piecewise(lcm(lcm_r(i-1,lst),lst[i]),1<i,lcm(lst[1],lst[2]),i=1,lcm_r(dim(lst),lst),dim(lst)<i)
+:
+:ch1.cf_p(p,n):=piecewise(p,t=n,0)
+:
+:ch1.cf_a_h:="f(a,n0,n1) Annual payments(a), first at n0+1, with the last one at n1"
+:ch1.cf_a(a,n0,n1):=piecewise(a,n0<t and t<=n1,0)
+:
+:ch1.cf_g_h:="f(g,n0,n1) Aritmetic Gradiant(g), first at n0+1, with the last one at n1; not include A (base Annual)"
+:ch1.cf_g(g,n0,n1):=piecewise(g*(t-n0),n0<t and t<=n1,0)
+:
+:ch1.cf_paf_h:="f(p,a,f,t0,t1)=Present+Annual+Final=cf_p(p,t0)+cf_a(a,t0,t1)+cf_p(f,t1)"
+:ch1.cf_paf(p,a,f,t0,t1):=ch1.cf_p(p,t0)+ch1.cf_a(a,t0,t1)+ch1.cf_p(f,t1)
+:
+:ch2.eq1:=f=p*(1+i)^(n)
+:ch2.eq2:=p=f*((1)/((1+i)^(n)))
+:ch2.eq3:=p=((g)/(i))*((((1+i)^(n)-1)/(i*(1+i)^(n)))-((n)/((1+i)^(n))))
+:ch2.eq4:=p=a*f.p_a(i,n)+g*f.p_g(i,n)
+:ch2.eq8:=a1*((n)/(1+i))
+:
+:ch2.factors:="See 'f.' for F|P and P|F (etc) Factors or 'feq.' for the equations."
+:
+:f.f_p(i,n):=(1+i)^(n)
+:f.p_f(i,n):=((1)/((1+i)^(n)))
+:f.p_a(i,n):=(((1+i)^(n)-1)/(i*(1+i)^(n)))
+:f.a_p(i,n):=((i*(1+i)^(n))/((1+i)^(n)-1))
+:f.f_a(i,n):=(((1+i)^(n)-1)/(i))
+:f.a_f(i,n):=((i)/((1+i)^(n)-1))
+:f.p_g(i,n):=((1)/(i))*((((1+i)^(n)-1)/(i*(1+i)^(n)))-((n)/((1+i)^(n))))
+:f.g_p(i,n):=(((1)/(i))*((((1+i)^(n)-1)/(i*(1+i)^(n)))-((n)/((1+i)^(n)))))^(−1)
+:
+:feq.f_p:=f=p*(1+i)^(n)
+:feq.p_f:=p=f*((1)/((1+i)^(n)))
+:feq.p_a:=p=a*(((1+i)^(n)-1)/(i*(1+i)^(n)))
+:feq.a_p:=a=p*((i*(1+i)^(n))/((1+i)^(n)-1))
+:feq.f_a:=f=a*(((1+i)^(n)-1)/(i))
+:feq.a_f:=a=f*((i)/((1+i)^(n)-1))
+:feq.p_g:=p=g*((1)/(i))*((((1+i)^(n)-1)/(i*(1+i)^(n)))-((n)/((1+i)^(n))))
+:feq.g_p:=g=p*(((1)/(i))*((((1+i)^(n)-1)/(i*(1+i)^(n)))-((n)/((1+i)^(n)))))^(−1)
+:
+:
+:ch3.eq1:=r=rate/period*periods
+:ch3.eq2:=i_eff=(1+((r)/(m)))^(m)-1
+:
+:ch3.eq3:=i_eff_cont=e^(r)-1
+:
+:
+:ch3.nom_to_nom_f(i0,rate0,rate1):=i0*(rate1/rate0)
+:ch3.nom_to_nom_eq:=i0/rate0=i1/rate1
+:ch3.nom_to_nom_h:="f(i0,rate0,rate1); For 2% per quarter convert to SemiAnnual 0.04=_f(0.02,1/4,1/2)"
+:
+:ch3.nom_to_eff_f(inom,p_nom,p_eff):=(1+ (inom) / (p_eff/p_nom))^(p_eff/p_nom)-1
+:ch3.nom_to_eff_eq:=ieff=(1+ (inom) / (p_eff/p_nom))^(p_eff/p_nom)-1
+:ch3.nom_to_eff_h:="f(inom,p_nom,p_eff); For 2% per month convert to eff per quarter 0.0612=f(0.02,1/12,1/4)"
+:
+:ch3.i_effective:=(1+((r)/(m)))^(m)-1
+:ch3.nom_h:="i_nom=nom(effective_rate,comp_f_per_year)"
+:ch3.eff_h:="i_eff=eff(nominal_rate,compounding_freq)"
+:
+:ch3.i_continuous_f(inom):=exp(inom)-1
+:ch3.i_continuous_eq:=ieff_continuous=exp(inom)-1
+:
+:ch4.pw_inpaf_f(i,n,p,a,f):=p+a*f.p_a(i,n)+f*f.p_f(i,n)
+:ch4.pw_inpaf_eq:=pw=p+a*f.p_a(i,n)+f*f.p_f(i,n)
+:
+:ch5.aw_inpaf_f(i,n,p,a,f):=p*f.a_p(i,n)+a+f*f.a_f(i,n)
+:ch5.aw_inpaf_eq:=aw=p*f.a_p(i,n)+a+f*f.a_f(i,n)
+:
+:ch6.eq2:=0=PW_income-PW_cost
+:ch6.eq2:=0=PW_income-PW_cost
+:ch6.eq2_h:="PW_income=present worth of costs or disbursements; PW_cost=present worth of incomes or receipts"
+:
+:ch6.ror_npaf_f(n,p,a,f):=solve(0=ch4.pw_inpaf_f(ror,n,p,a,f),ror)
+:ch6.ror_npaf_eq:=solve(0=ch4.pw_inpaf_f(ror,n,p,a,f),ror)
+:
+:ch6.ror_analysis:="the incremental cash flow series between two alternatives is evaluated"
+:
+:
+:EndPrgm
+
+
+
+:ch2.FV(i,n,A,P):=P*ch2.find_f_given_p|i=i and n=n
+:ch2.PV(i,n,0,F):=
+:ch2.PV(i,n,A,F):=
+:ch2.pmt(i,n,p,f):=
+:ch2.fv(i,n,a,p):=a*ch2.find_f_given_a|i=i and n=n
+:ch2.pmt(i,n,p,f):=
+
+:ch3.r_nominal_irate:=i_per_period*num_of_periods
+
+:ch3a.r:=ch3a.rate/ch3a.m
+:ch3a.i:=(1+((ch3a.r)/(ch3a.m)))^(ch3a.m)-1
+:
+
+:ch3.m_comps_in_p_f(cp,p):=p/cp
+:ch3.m_comps_in_p_:="f(CP,Period)->(1/12,1/2)=6"
+:ch3.m_comps_in_p_f(1/12,1/2)
