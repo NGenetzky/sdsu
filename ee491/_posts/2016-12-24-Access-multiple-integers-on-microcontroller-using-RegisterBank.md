@@ -43,7 +43,7 @@ I used anonymous functions to allows the user to define how to "get" or “set�
 
 I defined these for current time (in ms), the DigitalPort mentioned earlier, and 4 analog values.
 
-![image alt text]({{ site.url }}/public/vPOeHmqamX0AxJGBQ3l2eg_img_0.png)
+![image alt text](/sdsu/public/vPOeHmqamX0AxJGBQ3l2eg_img_0.png)
 
 Character representation of RegisterBank can be easily configured
 
@@ -53,11 +53,11 @@ Current it is a json object with register index as key and register value as val
 
 Create a Thingspeak Channel
 
-![image alt text]({{ site.url }}/public/vPOeHmqamX0AxJGBQ3l2eg_img_1.png)
+![image alt text](/sdsu/public/vPOeHmqamX0AxJGBQ3l2eg_img_1.png)
 
 Define a webhook that will send data to Thingspeak
 
-![image alt text]({{ site.url }}/public/vPOeHmqamX0AxJGBQ3l2eg_img_2.png)
+![image alt text](/sdsu/public/vPOeHmqamX0AxJGBQ3l2eg_img_2.png)
 
 Publish an event to update the values on Thingspeak
 
@@ -72,9 +72,9 @@ name="thingspeak”, data=string representation of RegisterBank:
 
 Visualize the values in Charts:
 
-![image alt text]({{ site.url }}/public/vPOeHmqamX0AxJGBQ3l2eg_img_3.png)
+![image alt text](/sdsu/public/vPOeHmqamX0AxJGBQ3l2eg_img_3.png)
 
-![image alt text]({{ site.url }}/public/vPOeHmqamX0AxJGBQ3l2eg_img_4.png)
+![image alt text](/sdsu/public/vPOeHmqamX0AxJGBQ3l2eg_img_4.png)
 
-![image alt text]({{ site.url }}/public/vPOeHmqamX0AxJGBQ3l2eg_img_5.png)
+![image alt text](/sdsu/public/vPOeHmqamX0AxJGBQ3l2eg_img_5.png)
 

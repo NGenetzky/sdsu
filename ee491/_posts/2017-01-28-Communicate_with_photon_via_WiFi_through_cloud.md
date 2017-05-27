@@ -355,9 +355,9 @@ board_led
 
 (Screenshots are from previous entry on 2017-12-24)
 
-![image alt text]({{ site.url }}/public/KWVsE55nJKMAfqtQW6YgQ_img_0.png)
+![image alt text](/sdsu/public/KWVsE55nJKMAfqtQW6YgQ_img_0.png)
 
-![image alt text]({{ site.url }}/public/KWVsE55nJKMAfqtQW6YgQ_img_1.png)
+![image alt text](/sdsu/public/KWVsE55nJKMAfqtQW6YgQ_img_1.png)
 
-![image alt text]({{ site.url }}/public/KWVsE55nJKMAfqtQW6YgQ_img_2.png)
+![image alt text](/sdsu/public/KWVsE55nJKMAfqtQW6YgQ_img_2.png)
 

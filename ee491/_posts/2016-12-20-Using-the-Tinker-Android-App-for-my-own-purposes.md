@@ -35,7 +35,7 @@ Earlier it was mentioned that Particle has a "tinker" application.
 
 	Then you can use the [Particle android app](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&cad=rja&uact=8&ved=0ahUKEwj8lOaM8IrRAhWD7iYKHau-A6oQFggoMAI&url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dio.particle.android.app%26hl%3Den&usg=AFQjCNH5QtkyHDRXxKAjDBDGbeMRYdbDTA&sig2=766kTB7SlEcJtOzTGrWg3w) to control the pins via the following functions.
 
-![image alt text]({{ site.url }}/public/KWFmLYL8pJ3qX3n27yUNw_img_0.png)
+![image alt text](/sdsu/public/KWFmLYL8pJ3qX3n27yUNw_img_0.png)
 
 What does the android app expect from the firmware
 

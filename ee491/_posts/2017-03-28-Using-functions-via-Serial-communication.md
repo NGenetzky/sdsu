@@ -33,21 +33,21 @@ First we must setup the PC for serial communication
 
 Find the COM port for your device
 
-![image alt text]({{ site.url }}/public/IRVmiSEQM2z9Wb1BKTN1Wg_img_0.png)
+![image alt text](/sdsu/public/IRVmiSEQM2z9Wb1BKTN1Wg_img_0.png)
 
 Setting up RealTerm 
 
 Display
 
-![image alt text]({{ site.url }}/public/IRVmiSEQM2z9Wb1BKTN1Wg_img_1.png)
+![image alt text](/sdsu/public/IRVmiSEQM2z9Wb1BKTN1Wg_img_1.png)
 
 Port:
 
-![image alt text]({{ site.url }}/public/IRVmiSEQM2z9Wb1BKTN1Wg_img_2.png)
+![image alt text](/sdsu/public/IRVmiSEQM2z9Wb1BKTN1Wg_img_2.png)
 
 Send:
 
-![image alt text]({{ site.url }}/public/IRVmiSEQM2z9Wb1BKTN1Wg_img_3.png)
+![image alt text](/sdsu/public/IRVmiSEQM2z9Wb1BKTN1Wg_img_3.png)
 
 We will do the three tasks in order. 
 
@@ -123,5 +123,5 @@ I will show the asci text sent over serial and then the next like is the respons
 
 A screenshot of RealTerm (green=out, yellow=in).
 
-![image alt text]({{ site.url }}/public/IRVmiSEQM2z9Wb1BKTN1Wg_img_4.png)
+![image alt text](/sdsu/public/IRVmiSEQM2z9Wb1BKTN1Wg_img_4.png)
 

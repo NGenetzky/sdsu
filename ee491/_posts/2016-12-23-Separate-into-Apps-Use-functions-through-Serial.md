@@ -60,7 +60,7 @@ How do you define which functions the microcontroller can perform?
 
 	Create a map with the second member of the pair being a Particle.Function: 
 
-	![image alt text]({{ site.url }}/public/gePsyU1BctB8A3GJDUjPg_img_0.png)
+	![image alt text](/sdsu/public/gePsyU1BctB8A3GJDUjPg_img_0.png)
 
 The std::bind(...) allows class methods to be called by providing "this" as first argument.
 
@@ -68,11 +68,11 @@ Now I want to call these functions through a serial interface.
 
 I can use RealTerm to send and monitor serial communication via the virtual COM port
 
-	![image alt text]({{ site.url }}/public/gePsyU1BctB8A3GJDUjPg_img_1.png)
+	![image alt text](/sdsu/public/gePsyU1BctB8A3GJDUjPg_img_1.png)
 
 I can use the SerialHandle class I wrote in Matlab to send commands:
 
-	![image alt text]({{ site.url }}/public/gePsyU1BctB8A3GJDUjPg_img_2.png)
+	![image alt text](/sdsu/public/gePsyU1BctB8A3GJDUjPg_img_2.png)
 
 Renamed Stream to File
 

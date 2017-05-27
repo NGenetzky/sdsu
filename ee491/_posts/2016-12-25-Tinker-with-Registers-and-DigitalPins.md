@@ -49,9 +49,9 @@ WKP is not connected, DAC and A5 write to DigitalPort. A4 is ms since boot. A0-A
 
 Screenshot of Tinker App using the Tinker class
 
-![image alt text]({{ site.url }}/public/yveu3DGt0Pe859TwHqZclQ_img_0.png)
+![image alt text](/sdsu/public/yveu3DGt0Pe859TwHqZclQ_img_0.png)
 
 Freenove Smart Car Remote
 
-![image alt text]({{ site.url }}/public/yveu3DGt0Pe859TwHqZclQ_img_1.png)
+![image alt text](/sdsu/public/yveu3DGt0Pe859TwHqZclQ_img_1.png)
 

@@ -57,13 +57,13 @@ I created a simple program that controls 4 LEDs and 3 Switches.
 
 This is an excerpt of "particle list" which lists all devices and the Functions/Variables it provides.
 
-![image alt text]({{ site.url }}/public/vQMWDgU1kUsBw2O9FIQ_img_0.png)
+![image alt text](/sdsu/public/vQMWDgU1kUsBw2O9FIQ_img_0.png)
 
 I can write the value on up to 32 Digital Outputs via this command.
 
-![image alt text]({{ site.url }}/public/vQMWDgU1kUsBw2O9FIQ_img_1.png)
+![image alt text](/sdsu/public/vQMWDgU1kUsBw2O9FIQ_img_1.png)
 
 I can read the value on up to 32 Digital Inputs via this command.
 
-![image alt text]({{ site.url }}/public/vQMWDgU1kUsBw2O9FIQ_img_2.png)
+![image alt text](/sdsu/public/vQMWDgU1kUsBw2O9FIQ_img_2.png)
 

@@ -37,21 +37,21 @@ This is a 4 step process. I will show what I did to provide access to the digita
 
 1. Create Pin and specify the direction (similar to pinMode or setting TRIS)
 
-![image alt text]({{ site.url }}/public/2MPVX1QHi24xa6XZM34BA_img_0.png)
+![image alt text](/sdsu/public/2MPVX1QHi24xa6XZM34BA_img_0.png)
 
-![image alt text]({{ site.url }}/public/2MPVX1QHi24xa6XZM34BA_img_1.png)
+![image alt text](/sdsu/public/2MPVX1QHi24xa6XZM34BA_img_1.png)
 
 2. Create a Digital Pin.
 
-![image alt text]({{ site.url }}/public/2MPVX1QHi24xa6XZM34BA_img_2.png)
+![image alt text](/sdsu/public/2MPVX1QHi24xa6XZM34BA_img_2.png)
 
 3. Create a Digital Port from the Digital Pins you want access to.
 
-![image alt text]({{ site.url }}/public/2MPVX1QHi24xa6XZM34BA_img_3.png)
+![image alt text](/sdsu/public/2MPVX1QHi24xa6XZM34BA_img_3.png)
 
 4. Add the Digital Port to your App.
 
-![image alt text]({{ site.url }}/public/2MPVX1QHi24xa6XZM34BA_img_4.png)
+![image alt text](/sdsu/public/2MPVX1QHi24xa6XZM34BA_img_4.png)
 
 **Topic:** Use Particle Device from Matlab
 
@@ -74,17 +74,17 @@ Ideally it should have been a class rather than a function. Instead I use anonym
 
 First call the Particle function to get anonymous functions to use "get" and “set”. The ACCESS_TOKEN for truncated for security reasons.
 
-![image alt text]({{ site.url }}/public/2MPVX1QHi24xa6XZM34BA_img_5.png)
+![image alt text](/sdsu/public/2MPVX1QHi24xa6XZM34BA_img_5.png)
 
 Using set we can turn on all the LEDs. This call will have no effect on the Digital Pins configured as inputs.
 
-	![image alt text]({{ site.url }}/public/2MPVX1QHi24xa6XZM34BA_img_6.png)
+	![image alt text](/sdsu/public/2MPVX1QHi24xa6XZM34BA_img_6.png)
 
 Using get we can read the state of the Digital Pins. This will read the both pins configured as Inputs and Outputs. The switches are active low. The Digital Port configuration is shown on [1].
 
 All the LEDs are OFF and all switches OFF:
 
-![image alt text]({{ site.url }}/public/2MPVX1QHi24xa6XZM34BA_img_7.png)
+![image alt text](/sdsu/public/2MPVX1QHi24xa6XZM34BA_img_7.png)
 
 **Topic:** Use Particle functions string of characters.
 
